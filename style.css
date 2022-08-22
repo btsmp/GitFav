@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+
+    --font-principal: 'Roboto', sans-serif;
+    --bg-color: #000000;
+    --text-color: #FFFFFF;
+    --border-color: #4A808C;
+    --secondary-color: #065E7C;
+    --tertiary-color: #06181C;
+}
+
+body {
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    font-family: var(--font-principal);
+    font-size: 1.6rem;
+}
+
+#app {
+    width: 90rem;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 5rem
+}
+
+header {
+    margin-top: 5rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#input-search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .8rem;
+    height: 4.8rem;
+}
+
+.sr-only {
+    position: absolute;
+    height: 1px;
+    width: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+input {
+    width: 400px;
+    background: var(--tertiary-color);
+    border: none;
+    color: #7C7C8A;
+    padding: 1.6rem;
+    border-radius: 5px;
+}
+
+.search {
+    color: var(--text-color);
+    background: var(--secondary-color);
+    border-radius: 5px;
+    border: none;
+    padding: 1.2rem 3.2rem;
+
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .8rem;
+
+    cursor: pointer;
+
+    transition-duration: .2s;
+}
+
+.search:hover {
+    background-color: var(--text-color);
+    color: var(--secondary-color);
+}
+
+.search:hover svg path {
+    transition-duration: .2s;
+    fill: var(--secondary-color)
+}
+
+.rounded {
+    border-radius: 1.2rem;
+    border: 1px solid var(--border-color);
+    margin-bottom: 5rem;
+
+}
+
+table {
+    width: 100%;
+    border-radius: 1.2rem;   
+    
+    border-collapse: collapse;
+    overflow: hidden;
+}
+
+table th {
+    text-align: left;
+    background: #092D38;
+    padding: 1.6rem 2.4rem
+}
+
+table tr {
+    background-color: rgba(6, 22, 27, 0.5);
+}
+
+table tr:nth-child(even) {
+    background-color: var(--tertiary-color);
+    border-bottom: 1px solid var(--border-color);
+    border-top: 1px solid var(--border-color);
+    
+}
+
+table td {
+    padding: 4rem 2.4rem;
+    text-align: left;
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 160%;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+    
+}
+
+.user img {
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.user a {
+    text-decoration: none;
+    color: #E1E1E6;
+}
+
+.user a span {
+    font-weight: 400;
+}
+
+.remove{
+    color: #F75A68;
+    cursor: pointer;
+}
