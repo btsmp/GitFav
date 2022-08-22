@@ -33,7 +33,7 @@ export class Favorites {
     async add(username) {
         try {
 
-            const userExists = this.entries.find(entry =>  entry.login == username)
+            const userExists = this.entries.find(entry => entry.login == username)
             const user = await GithubUser.search(username)
 
             if (userExists) {
@@ -50,7 +50,7 @@ export class Favorites {
             this.update()
             this.save()
 
-        } catch(error) {
+        } catch (error) {
 
             alert(error.message)
 
@@ -78,11 +78,17 @@ export class FavoritesView extends Favorites {
 
     async onadd() {
         const searchButton = this.root.querySelector('.search')
-        
+        const inputArea = this.root.querySelector('#input')
+
+        inputArea.addEventListener('keyup', (event) => {
+            if (event.code === 'Enter') {
+                this.add(inputArea.value)
+
+                inputArea.value = ''
+            }
+        })
+
         searchButton.onclick = () => {
-
-            const inputArea = this.root.querySelector('#input')
-
             this.add(inputArea.value)
 
             inputArea.value = ''
